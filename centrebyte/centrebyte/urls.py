@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from reviews.views import IndexView, my_view
+from reviews.views import IndexView
+from products.views import productView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'), 
-    path('seller/<int:id>/', my_view, name='my_view'),
+    path('product/<int:id>/', productView, name='product_view'),
          #passing a refrence to a function, not calling it.
 ]
