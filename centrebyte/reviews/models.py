@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib import auth
-from products.models import Item
+#from products.models import Item
 #creating object for review
+"""
+
 class Review(models.Model):
     content = models.TextField(help_text="review text")
     rating = models.IntegerField(help_text="the rating the reviewer has given")
@@ -18,4 +20,4 @@ class Seller(models.Model):
     seller_email = models.EmailField(help_text="sellers email address")
   
 
-
+"""

@@ -1,18 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../static/style.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">        
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-       
-        <title>{{ item.name }}</title> 
-    </head>
-    <body>
-        {% include 'menuBar.html' %}
-        <p>{{ item.name }}</p>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ item.name }}</title>
+</head>
+<body>
+    {% include 'menuBar.html' %}
+    <h1>{{ item.name }}</h1>
+    <p>Price: ${{ item.price }}</p>
+    <p>Description: {{ item.descriptions }}</p>
+    <p>Seller: {{ item.seller }}</p>
+    <img src="../../static/ani.jpeg" alt="{{ item.name }}" width="200">
+</body>
 </html>
