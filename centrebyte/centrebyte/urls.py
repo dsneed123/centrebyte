@@ -15,14 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # Import the 'include' function
 from products.views import ProductView
 from Core.views import IndexView
+from sellers.views import register_item
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'), 
-    path('product/<int:id>/', ProductView.as_view(), name='product_view')
+    path('', IndexView, name='index'),
+    path('product/<int:id>/', ProductView.as_view(), name='product_view'),
 
-    #path('product/<int:id>/', productView, name='product_view'),
-         #passing a refrence to a function, not calling it.
+    # Add the URL pattern for item registration
+    path('register-item/', register_item, name='register_item'),  # Replace 'your_app' with your app's name
 ]

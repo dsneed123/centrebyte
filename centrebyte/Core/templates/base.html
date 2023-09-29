@@ -1,18 +1,26 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/products/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+        <script src="static/products/products.js" defer></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
         <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
        
         <title>Centrebyte</title>
     </head>
     <body>
         {% include 'menuBar.html' %}
-        <p>Hello</p>
+        {% include 'subMenu.html' %}
+        <div class="logo-div">
+            <img class="head-image" src="static/Core/universe-1566159_1280.jpg" alt="Snow" style="width:100%;">
+            <h3 class="animate-charcter"> CENTREBYTE</h3>    
+        </div>
+        {% include 'product_app.html' %}
+        
     </body>
 </html>

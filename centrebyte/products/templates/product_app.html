@@ -1,0 +1,17 @@
+<div class="container">
+    {% for item in items %}
+    <div class="box">
+        <img src="{{ item.image }}" alt="{{ item.name }}">
+        <h1>{{ item.name }}</h1>
+        <div class="product-details">
+            <p>${{ item.price }}</p>
+            <p>Seller: {{ item.seller }}</p>
+            <div class="product_app_buttons">
+                <button>Add to cart</button>
+                <!-- Use data attribute to store the item's ID -->
+                <button class="read-more" data-item-id="{{ item.id }}">Read More</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
 class Seller(models.Model):
     id = models.AutoField(primary_key=True)  # This line ensures 'id' is the primary key.

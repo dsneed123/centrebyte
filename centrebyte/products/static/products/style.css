@@ -1,0 +1,194 @@
+/* product css file*/
+body{
+    background-color: #408ec6;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: flex; /* Use flexbox to place divs horizontally */
+    flex-wrap: wrap;
+
+
+}
+.box {
+    border: 3px solid #4C4E52;
+    padding: 10px;
+    color: black; /* Set the text color to black */
+    background-color: white;
+    margin: 10px;
+    width: 350px; /* Set a constant width */
+    height: auto;
+    border-radius: 12%;
+    top: 0;
+    bottom:0;
+    position:fixed;
+    overflow-y : hidden;
+    position: relative; /* Position for absolute children */
+}
+
+
+.box button {
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+    
+}
+.box img{
+    width : 200px;
+    height : 200px;
+ 
+    
+}
+.box button:hover {
+    background-color: #0056b3; /* Change button color on hover */
+}
+.product_app_buttons {
+    display: flex;
+    justify-content: center;
+}
+.product_app_buttons button{
+    margin: 10px;
+}
+/* Apply styles to the menu bar */
+.meun-bar p{
+    font-family: "Black Ops One", sans-serif;
+    text-align: center;
+}
+.sub-menu{
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center all items horizontally */
+    align-items: center; /* Center all items vertically */
+    flex-wrap: wrap;
+    margin-top: -2px;
+    padding-top: 0px;
+    background-color : #4C4E52;
+    
+
+}
+.sub-menu button{
+    margin : 0px;
+    background-color : #4C4E52;
+    color : white;
+    width : 150px;
+    border-width: 0px;
+    height: 25px;
+
+}
+.sub-menu button:hover {
+    border-color : white;
+    border-width: 1px;
+    
+}
+.sub-menu p{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu-bar {
+    list-style: none;
+    padding: 0;
+    height: 70px;
+    margin: 0;
+    background-color: #1e2761; /* Updated background color */
+    display: flex;
+    justify-content: center; /* Center all items horizontally */
+    align-items: center; /* Center all items vertically */
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.menu-bar button {
+    font-family: "Black Ops One", sans-serif;
+    background-color: #1e2761;
+    width: 100px;
+    border : 0px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 0px;
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    height: 70px;
+ 
+}
+
+.menu-bar button:hover {
+    background-color: #7a2048;
+}
+
+/* Style for the input element */
+.menu-bar input[type="text"] {
+    padding: 10px;
+    border: 0px solid #E91E63; /* Updated border color */
+    border-radius: 4px;
+    font-size: 16px;
+    height: 40px;
+    width: 95%;
+    min-width: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 12px;
+    margin-bottom : 12px;
+}
+.logo-div{
+    height : 220px;
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+.animate-charcter
+{
+  font-family: "Black Ops One", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #0D1B2A 0%,  /* Darkest blue */
+    #1E344A 29%, /* Medium blue */
+    #3D6CB9 67%, /* Light blue */
+    #9DBFF4 100% /* Lightest blue */
+);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 120px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+#backButton{
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+}

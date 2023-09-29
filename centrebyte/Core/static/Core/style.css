@@ -1,7 +1,8 @@
 /* CSS Reset - Resets default browser styles */
-body{
+body {
     background-color: #408ec6;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -13,15 +14,17 @@ p {
     font-family: "Black Ops One", sans-serif;
     text-align: center;
 }
+
+
 .menu-bar {
     list-style: none;
     padding: 0;
     height: 70px;
     margin: 0;
-    background-color: #1e2761; /* Updated background color */
+    background-color: #1e2761;
     display: flex;
-    justify-content: center; /* Center all items horizontally */
-    align-items: center; /* Center all items vertically */
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -30,15 +33,15 @@ p {
     font-family: "Black Ops One", sans-serif;
     background-color: #1e2761;
     width: 100px;
-    border : 0px;
+    border: 0px;
     color: white;
     cursor: pointer;
     font-size: 16px;
     padding: 10px;
     margin-left: 0px;
     display: flex;
-    align-items: center; /* Center the text vertically */
-    justify-content: center; /* Center the text horizontally */
+    align-items: center;
+    justify-content: center;
     height: 70px;
 }
 
@@ -49,7 +52,7 @@ p {
 /* Style for the input element */
 .menu-bar input[type="text"] {
     padding: 10px;
-    border: 0px solid #E91E63; /* Updated border color */
+    border: 0px solid #E91E63;
     border-radius: 4px;
     font-size: 16px;
     height: 40px;
@@ -58,5 +61,5 @@ p {
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 12px;
-    margin-bottom : 12px;
+    margin-bottom: 12px;
 }
