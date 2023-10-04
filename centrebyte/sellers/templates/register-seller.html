@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marketplace Seller Information</title>
+    <link rel="stylesheet" type="text/css" href="/static/products/style.css">
+    <script src="/static/Core/core.js" defer></script>
+</head>
+<body>
+    {% include 'menuBar.html' %}
+    {% include 'subMenu.html' %}
+    <h1>Seller Information</h1>
+    <form action="submit_seller_info.php" method="post">
+        <h2>Choose Seller Type</h2>
+        <label for="seller-type-individual">
+            <input type="radio" id="seller-type-individual" name="seller-type" value="Individual" required>
+            Individual
+        </label>
+        <label for="seller-type-business">
+            <input type="radio" id="seller-type-business" name="seller-type" value="Business" required>
+            Business
+        </label>
+
+        <h2>Personal Information (For Individuals)</h2>
+        <label for="individual-name">Full Name:</label>
+        <input type="text" id="individual-name" name="individual-name" required><br>
+
+        <label for="individual-email">Email:</label>
+        <input type="email" id="individual-email" name="individual-email" required><br>
+
+        <!-- Add more individual-specific fields as needed -->
+
+        <h2>Business Information (For Businesses)</h2>
+        <label for="business-name">Business Name:</label>
+        <input type="text" id="business-name" name="business-name"><br>
+
+        <label for="business-registration">Business Registration Number:</label>
+        <input type="text" id="business-registration" name="business-registration"><br>
+
+        <!-- Add more business-specific fields as needed -->
+
+        <h2>Legal Information</h2>
+        <label for="tax-id">Tax Identification Number (TIN):</label>
+        <input type="text" id="tax-id" name="tax-id" required><br>
+
+        <label for="business-license">Business License Number:</label>
+        <input type="text" id="business-license" name="business-license"><br>
+
+        <h2>Contact Information</h2>
+        <label for="contact-phone">Phone Number:</label>
+        <input type="tel" id="contact-phone" name="contact-phone" required><br>
+
+        <label for="contact-address">Address:</label>
+        <textarea id="contact-address" name="contact-address" rows="4" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

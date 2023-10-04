@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block content %}
+
+{% if form.errors and not form.non_field_errors %}
+<p> class="errornote"
+{% if form.errors.item|length == 1%}{% translate "Please Ccorrect the error below." %}{% else %}{% 
+translate "Please Ccorrect the error below." %}{% endif %}
+</p>
+{% endif %}
+
+

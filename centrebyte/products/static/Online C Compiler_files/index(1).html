@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- saved from url=(0137)https://s0.2mdn.net/sadbundle/758039850830550346/ACQ_DIS_Q421_IT_PA_Orange_CN_ANIM_300x250_HTML5_Null_Null_Null_Null/index.html?ev=01_250 -->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="ad.size" content="width=300,height=250">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<link href="./main(1).css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">var clickTag = "https://www.google.com";</script>
+		<script src="./TweenMax.min.js" defer=""></script>
+		<script type="text/javascript" src="./main(2).js" defer=""></script>
+	
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:a8b37c27258c422e99a84a06d6491f40 msdt:dt="string">Global|7a0f06d1-cbea-4536-ad47-cefe758cbe8f</mso:a8b37c27258c422e99a84a06d6491f40>
+<mso:TaxCatchAll msdt:dt="string">2;#Global;#1;#Global</mso:TaxCatchAll>
+<mso:c403d80a14b84d1abc4b40d1892fced3 msdt:dt="string">Global|cf039cbc-9f82-4a13-90c4-6672be3eb273</mso:c403d80a14b84d1abc4b40d1892fced3>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script></head>
+	<body onload="startAd()">
+		<div id="container">
+			<div id="content">
+				<a href="javascript:void(0);" onclick="window.open(clickTag);">
+					<div id="rolloverCatch"></div>
+					<div id="cover" style="opacity: 0;"></div>
+					<div id="hideMask">
+						<div id="shimmer" style="visibility: visible; left: 350px; transform: matrix(0.99999, 0.00017, -0.00017, 0.99999, 0, 0);"><img src="./shimmer(1).png"></div>
+					</div>
+					<div id="txt_1" class="lgArt" style="visibility: visible; transform-origin: left top 0px; transform: matrix(0.5, 0, 0, 0.5, 0, 0); opacity: 1;"><img src="./txt_1(1).png"></div>
+					<div id="txt_1b" class="lgArt" style="visibility: visible; transform-origin: left top 0px; transform: matrix(0.5, 0, 0, 0.5, 0, 0); opacity: 1;"><img src="./txt_1b.png"></div>
+					<div id="txt_2" class="lgArt" style="visibility: visible; transform-origin: left top 0px; transform: matrix(0.5, 0, 0, 0.5, 0, 0); opacity: 1;"><img src="./txt_2.png"></div>
+					
+					<div id="cta" class="lgArt" style="visibility: visible; transform-origin: left top 0px; transform: matrix(0.5, 0, 0, 0.5, 0, 0); opacity: 1;"><img src="./cta.png"></div>
+					<div id="logo" class="lgArt" style="visibility: visible; transform-origin: left top 0px; transform: matrix(0.5, 0, 0, 0.5, 0, 0); opacity: 1;"><img src="./logo(1).png"></div>
+					<div id="icon" style="visibility: visible;"><img src="./icon(1).png" id="iconImg" style="transform: matrix(1, 0, 0, 1, 8, 0); transform-origin: 50% 40% 0px;"></div>
+					<div id="orangeBckgrd" style="visibility: visible; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+				</a>
+			</div>
+		</div>
+	
+</body></html>

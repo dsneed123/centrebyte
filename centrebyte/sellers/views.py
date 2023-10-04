@@ -12,3 +12,5 @@ def register_item(request):
         form = RegisterItemForm()
 
     return render(request, '../templates/register-item.html', {'form': form})
+def register_seller(request):
+    return render(request, 'register-seller.html')

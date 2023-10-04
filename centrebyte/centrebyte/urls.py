@@ -14,11 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from django.contrib import admin, auth
 from django.urls import path, include  # Import the 'include' function
 from products.views import ProductView
 from Core.views import IndexView
-from sellers.views import register_item
+from sellers.views import register_item,register_seller
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,8 @@ urlpatterns = [
 
     # Add the URL pattern for item registration
     path('register-item/', register_item, name='register_item'),  # Replace 'your_app' with your app's name
+    path('register-seller/', register_seller, name='register-seller'),
+    path("accounts/", include(("django.contrib.auth.urls", "auth"),namespace="accounts" )),
+    path("accounts/password_reset/done/", auth.views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path("accounts/reset/done/", auth.views.PasswordResetCompleteView.as_view(), name="Passeord_reset_complete"),
 ]
