@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/static/products/style.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
-        <script src="static/products/products.js" defer></script>
-        <script src="/static/Core/core.js" defer></script>
+        <script src="{% static 'products/products.js' %}" defer></script>
+        <script src="{% static 'Core/core.js' %}" defer></script>
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
         <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
        
@@ -18,10 +18,16 @@
         {% include 'menuBar.html' %}
         {% include 'subMenu.html' %}
         <div class="logo-div">
-            <img class="head-image" src="static/Core/universe-1566159_1280.jpg" alt="Snow" style="width:100%;">
+            <img class="head-image" src="{% static 'Core/universe-1566159_1280.jpg' %}" alt="Snow" style="width:100%;">
             <h3 class="animate-charcter"> CENTREBYTE</h3>    
         </div>
+        <div class="welcome-message">
+            <div class="message-box">
+                <p>Welcome to Centrebyte, where the future of shopping meets the power of cryptocurrency. Experience the freedom of anonymous transactions and discover a world of endless possibilities. We're thrilled to have you as part of our pioneering community, redefining e-commerce in a secure and innovative way. Explore our vast marketplace, shop confidently with cutting-edge security, and embrace the boundless potential of crypto. Happy shopping, and welcome to the future!</p>
+            </div>
+        </div>
         {% include 'product_app.html' %}
-        
+        {% block content %}
+        {% endblock %}
     </body>
 </html>

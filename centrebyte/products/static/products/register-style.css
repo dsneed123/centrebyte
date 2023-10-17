@@ -1,0 +1,44 @@
+.form-container {
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+   
+}
+
+/* Optional styling for form elements */
+.form-container label {
+    margin-bottom: 5px;
+    font-size: 20pt;
+}
+
+.form-container input, .form-container textarea {
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+.form-group{
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin:10px;
+    border: 2px solid Black;
+}
+.form-container button {
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+}
+.Description {
+    height: 100px;
+    border-radius: 12px;
+    
+}
+label{
+    font-family: 'Courier New', Courier, monospace;
+}

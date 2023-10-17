@@ -12,5 +12,12 @@ const sellItemButton = document.getElementById('sell-item-button');
 // Add a click event listener to the button
 sellItemButton.addEventListener('click', function () {
     // Redirect to the "Sell an Item" page
-    window.location.href = '/register-seller/'; // Replace with the actual URL of your "Sell an Item" page
+    window.location.href = '/register-item/'; // Replace with the actual URL of your "Sell an Item" page
+});
+const accountBtn = document.getElementById('account-btn');
+
+// Add a click event listener to the button
+    accountBtn.addEventListener('click', function () {
+    // Redirect to the "Sell an Item" page
+    window.location.href = '/accounts/profile'; // Replace with the actual URL of your "Sell an Item" page
 });

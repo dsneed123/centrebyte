@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success Page</title>
+</head>
+<body>
+    <h1>Success!</h1>
+    <p>Your item has been successfully registered.</p>
+
+    <h2>Item Details</h2>
+    <ul>
+        <li><strong>Name:</strong> {{ item.name }}</li>
+        <li><strong>Description:</strong> {{ item.descriptions }}</li>
+        <li><strong>Price:</strong> {{ item.price }}</li>
+        <li><strong>Image:</strong> <img src="{{ item.image.url }}" alt="{{ item.name }}" /></li>
+    </ul>
+    
+
+</body>
+</html>

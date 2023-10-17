@@ -12,4 +12,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+// products.js
+document.addEventListener('DOMContentLoaded', function () {
+    const editButtons = document.querySelectorAll('.edit-button');
+
+    editButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const targetId = button.getAttribute('data-target-id');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.style.display = 'block';
+            }
+        });
+    });
+});
 
