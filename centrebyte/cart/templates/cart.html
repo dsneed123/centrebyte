@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+        <script src="{% static 'products/products.js' %}" defer></script>
+        <script src="{% static 'Core/core.js' %}" defer></script>
+        <script src="{% static 'cart.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+       
+        <title>Centrebyte</title>
+    </head>
+    <body>
+        {% load i18n static %}
+<body>
+    <div class="cart-container">
+        <a href="/" class="continue-shopping">←Continue shopping</a>
+
+    </div>
+    <div class="cart-wrapper">
+        <div class="cart-items-container">
+            
+            <div class="cart-items">
+                <h1 style="font-family:'Ubuntu', sans-serif;">Shopping Cart</h1>
+                {% for cart in cart_items %}
+                {% for item in cart.items.all %}
+                        <li class="cart-item">
+                            <div class="item-details">
+                                <h2>{{ item.name }}</h2>
+                                <p class="cart-price">Price: ${{ item.price }}</p>
+                                <form action="{% url 'delete_from_cart' cart.id item.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button style="color: gray;" class="delete" type="submit">Remove</button>
+                                </form>
+                            </div>
+                            <img class="item-image" src="{{ item.image.url }}" alt="{{ item.name }}" style="width: 150px; height: 150px;">
+                        </li>
+                    {% endfor %}
+                {% endfor %}
+            
+                </div>
+        </div>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Subtotal: ${{ total_price }}</p>
+            <div class="shipping-options">
+                <h3>Shipping Options</h3>
+                <label for="shipping-options">Choose Shipping:</label>
+                <select id="shipping-options" name="shipping-options">
+                    <option value="express">$15 Express</option>
+                    <option value="fast">$10 Fast</option>
+                    <option value="standard">$5 Standard</option>
+                </select>
+            </div>
+            <div class="promo-code">
+                <h3>Promo Code</h3>
+                <input type="text" id="promo-code" name="promo-code" placeholder="Enter your promo code">
+                <button id="apply-promo-code">Apply</button>
+            </div>
+            <button id="checkout-button" class="checkout-button">Checkout→</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "temp.html" %}
 {% load i18n static %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'admin/css/login.css' %}">
@@ -63,6 +63,12 @@
     <input type="submit" value="{% translate 'Log in' %}">
   </div>
 </form>
+
+<!-- Add the "Sign up" link pointing to the registration page -->
+<div class="signup-link">
+  <a href="{% url 'signup' %}">{% translate "Don't have an account? Sign up" %}</a>
+</div>
+
 
 </div>
 {% endblock %}

@@ -3,7 +3,6 @@ from products.models import Item
 # Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
- # Replace 'your_app' with your actual app name
 
 class Cart(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

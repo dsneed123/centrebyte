@@ -6,12 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
         <script src="{% static 'products/products.js' %}" defer></script>
         <script src="{% static 'Core/core.js' %}" defer></script>
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
         <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-       
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <title>Centrebyte</title>
     </head>
     <body>
@@ -19,7 +20,7 @@
         {% include 'subMenu.html' %}
         {% load i18n static %}
  
-        <div class="dash-container">
+        <div class="profile-dash-container">
             <div class="left">
                 {% include 'dashboard-menu.html' %}
             </div>
@@ -64,10 +65,10 @@
                             </div>
                         </div>
                         <div class="profile-item">
-                            <form method="post" action="{% url 'logout' %}">
-                                {% csrf_token %}
-                                <button type="submit" class="logout-button">Logout</button>
-                            </form>
+                            <button href="{% url 'logout' %}" class="logout-link" id="logout-link">Logout</button>
+                        </div>
+                        <div id="logout-notification">
+                            Logout successful!
                         </div>
                     </form>
                 </div>

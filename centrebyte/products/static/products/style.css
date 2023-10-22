@@ -2,49 +2,125 @@
 html, body{
     background-color: #f0f8ff;
     height: 100%;
+    width: 100%;
+ 
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .container {
-    display: flex; /* Use flexbox to place divs horizontally */
+    display: flex;
     flex-wrap: wrap;
+    justify-content: left; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family:  'Ubuntu', sans-serif;
+   
+}
 
-
+.index_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    width: 100%;
+    font-family:  'Ubuntu', sans-serif;
 }
 .box {
-    border: 0px solid #4C4E52;
+    border-bottom: 2px solid gray;
     padding: 10px;
-    color: black; /* Set the text color to black */
-    background-color: white;
-    margin: 10px;
-    width: 350px; /* Set a constant width */
-    height: auto;
-    border-radius: 12%;
-    top: 0;
-    bottom:0;
-    position:fixed;
-    overflow-y : hidden;
-    position: relative; /* Position for absolute children */
+    color: black;
+    background-color: transparent;
+    width: 325px;
+    height: 550px; /* Set a fixed height for all boxes */
+    position: relative;
+    text-align: center;
+    margin: 10px 0;
+    overflow: hidden;
 }
 
+
+.display-item {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked vertically within the box */
+    justify-content: center; /* Center content vertically within the box */
+    align-items: center; /* Center content horizontally within the box */
+    
+}
+
+.product-details{
+    
+    border-radius: 12px;
+}
+.app-item-name {
+    font-size: 15pt;
+    max-height: 2.5em; /* Adjust this value to set a limit of two lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow the text to wrap */
+}
+.hover-element {
+    cursor: pointer;
+    position: relative;
+    text-align: center; /* Center the child elements horizontally */
+}
+.hover-element{
+    font-size: 15pt;
+}
+.hover-element .item-price {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    transition: opacity 0.3s ease;
+}
+
+.hover-element:hover .item-price {
+    display: block;
+    opacity: 1;
+}
+
+.hover-element:hover .btc-price {
+    opacity: 0;
+}
 
 .box button {
     background-color: #007bff; /* Set the button background color */
     color: white; /* Set the button text color */
     border: none; /* Remove button border */
-    padding: 8px 16px; /* Add some padding to the button */
+    padding: 8px 8px; /* Add some padding to the button */
     font-size: 16px; /* Set the font size for the button text */
     cursor: pointer; /* Change cursor to pointer on hover */
     border-radius: 5px;
     
 }
-.box img{
-    width : 200px;
-    height : 200px;
- 
+.add-to-cart{
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 8px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+}
+.item-image{
+    width : 275px;
+    height : 275px;
+    padding: 10px;
     
 }
 .box button:hover {
@@ -68,8 +144,10 @@ html, body{
     justify-content: center; /* Center all items horizontally */
     align-items: center; /* Center all items vertically */
     flex-wrap: wrap;
-    margin-top: -2px;
-    padding-top: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    height: 35px;
+  
     background-color : #4C4E52;
     
 
@@ -80,12 +158,13 @@ html, body{
     color : white;
     width : 150px;
     border-width: 0px;
-    height: 25px;
+    height: 35px;
 
 }
 .sub-menu button:hover {
     border-color : white;
     border-width: 1px;
+
     
 }
 .sub-menu p{
@@ -93,10 +172,11 @@ html, body{
 }
 
 .menu-bar {
+    
     list-style: none;
-    padding: 0;
+    padding: 0px;
     height: 70px;
-    margin: 0;
+    margin: 0px;
     background-color: #1e2761; /* Updated background color */
     display: flex;
     justify-content: center; /* Center all items horizontally */
@@ -124,7 +204,7 @@ html, body{
 }
 
 .menu-bar button:hover {
-    background-color: #7a2048;
+    text-decoration: underline;
 }
 
 /* Style for the input element */
@@ -142,21 +222,21 @@ html, body{
     margin-bottom : 12px;
 }
 .logo-div{
-    height : 220px;
+    height : auto;
     width : 100%;
     display: flex;
     justify-content: center;
+
     position: relative;
     text-align: center;
     color: white;
 }
 
-
 .animate-charcter
 {
   font-family: "Black Ops One", sans-serif;
   position: absolute;
-  top: 50%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
@@ -192,22 +272,53 @@ html, body{
     display: flex;
     flex: column;
     height: 100%;
+    position: relative;
+    margin-top: -45%;
 }
-.left{
-    background-color: rgb(31, 28, 28);
+.content{
+    display: flex;
+    
+    flex: column;
     height: 100%;
-  
+    position: relative;
+    margin-top: -45%;
+    width: 100%;
+    
+ 
+}
+.profile-dash-container{
+    display: flex;
+    flex: column;
+    height: 100%;
+    position: relative;
+    margin-top: 0px;
+}
+.head-image{
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.left {
+    margin-top: 20px;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    height: 100%;
+    width: 8%;
+    z-index: 999; /* Set a high z-index to make sure it's in front of other content */
+    
 }
 .left button{
-    background-color: #282929; /* Set the button background color */
+    font-size: 16px;
     color: white; /* Set the button text color */
-    border: none; /* Remove button border */
+    
     padding: 8px 16px; /* Add some padding to the button */
     font-size: 16px; /* Set the font size for the button text */
     cursor: pointer; /* Change cursor to pointer on hover */
     width: 100%;
-
+    cursor: pointer;
     margin-top: 5px;
+    margin-top: 10px;
 }
 .left p{
     font-size: 16pt;
@@ -221,6 +332,12 @@ html, body{
     
     align-items: center; /* Center horizontally */
     height: 100%;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 17pt;
 }
 .user-title{
     display : flex;
@@ -251,6 +368,7 @@ html, body{
     border-bottom: 2px solid gray;
     width: 70%;
     padding: 10px;
+    font-size: 15pt;
 }
 .user-form{
     width: 100%;
@@ -274,4 +392,471 @@ html, body{
     color:white;
     font-family: "Black Ops One", sans-serif;
     border: 3px solid black;
+}
+.profile-item  button{
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+    margin:10px;
+}
+.cart-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
+    font-family: 'Ubuntu', sans-serif;
+}
+.order-summary{
+    font-family: 'Ubuntu', sans-serif;
+}
+.cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.cart-items-container {
+    width: 70%; /* Adjust the width to your preference */
+    float: left;
+   
+}
+
+.order-summary {
+    clear: both;
+    background-color: lightgray;
+    width: 100%; /* Width of the parent container */
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;
+    
+}
+.left button{
+    background-color: #007bff;
+    border: none;
+}
+.promo-code button{
+    background-color: #f1807e;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    width: 50px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    width: auto;
+    
+}
+.promo-code input{
+    border-radius: 1px;
+    height: 25px;
+    border : none;
+}
+
+.cart-items {
+    background-color: transparent;
+    border: 2px solid black;
+    width: 100%; /* Set the width to 100% to make it expand across the screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+.checkout-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.cart-item {
+    background-color: white;
+    margin: 10px;
+    height: auto;
+    width: 50%; /* Set the width to 100% to make each cart item expand across the screen */
+    border: 2px solid darkgray;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+
+.item-details {
+    flex: 1;
+    padding: 10px;
+}
+
+.cart-price{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15pt;
+}
+.order-summary{
+    background-color: lightgray;
+    width:400px;
+}
+ul{
+    list-style-type: none;
+}
+.delete{
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+    border: none;
+}
+.delete:hover{
+    font-size: 12pt;
+}
+.crypto-wallet{
+    width: 450px;
+    border:2px outset black;
+
+}
+.crypto-sent{
+    background-color: #007bff; /* Set the button background color */
+    color: white; /* Set the button text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add some padding to the button */
+    font-size: 16px; /* Set the font size for the button text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px;
+    margin:10px;
+}
+.star-img{
+    width:30px;
+    height: 30px;
+    margin: 0px;
+    
+}
+.rating-stars{
+    border: transparent;
+    margin: 0px;
+}
+.dropbtn {
+    background-color: #007bff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+  
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.sidebar-container{
+    margin-top: 10px;
+    height: 100%;
+}
+  
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #007bff;
+}
+#cart-notification {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    animation: slide-in 1s;
+    z-index: 1000; /* Set a high z-index value */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Hide the options list by default */
+.options-list {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Style for the individual options */
+.options-list li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+/* Style for the links in the options list */
+.options-list a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Show the options list when hovering over the Account or Cart button */
+.account-dropdown:hover .options-list,
+.cart-dropdown:hover .options-list {
+    display: block;
+    z-index: 999; /* Adjust the z-index value as needed */
+}
+
+#logout-notification {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    animation: slide-in 1s;
+    z-index: 1000; /* Set a high z-index value */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+#last-element{
+    text-decoration: underline;
+}
+#account-btn{
+    text-decoration: underline;
+}
+.continue-shopping {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14pt;
+    border: transparent;
+}
+
+.continue-shopping:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#content-main {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.form-row {
+    margin: 10px 0;
+}
+
+.form-row label {
+    font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-reset-link a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+.submit-row {
+    text-align: center;
+}
+
+.submit-row input[type="submit"] {
+    background-color: #0078d4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-row input[type="submit"]:hover {
+    background-color: #005b9f;
+}
+
+.errornote {
+    color: #e60000;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+
+
+
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.item-details {
+    flex: 1;
+    padding: 0 10px;
+    /* Add other styling as needed for the left content */
+}
+
+.product-item-image {
+    width: 550px;
+    height: auto;
+    margin: 10px 0;
+    /* Add other styling as needed for the right image */
+}
+.item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-details {
+    font-family:  'Ubuntu', sans-serif;
+    flex: 1;
+    padding: 0 10px;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center the child elements */
+ 
+    padding: 10px;
+    height: auto;
+    background-color: white;
+    /* Add other styling as needed for the left content */
+}
+.item-details h1{
+    font-family:  'Ubuntu', sans-serif;
+}
+.sold-by-tag{
+    font-size: 10pt;
+    color: blue;
+    text-decoration: underline;
+}
+.review-box{
+    margin-top:50px;
+}
+.item-map{
+    padding:10px;
+    margin:10px;
+    background-color: white;
+}
+.user-item-container {
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Optional: Add a border for separation */
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    text-align: left; /* Reset text alignment for content within the container */
+    width:100%;
+}
+/* Apply styles to the edit form */
+.edit-form {
+    background-color: #f5f5f5; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    padding: 20px;
+    max-width: 400px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Style form labels */
+.edit-form label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style form input fields */
+.edit-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style the Save and Cancel buttons */
+.edit-form button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.edit-btn{
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+ 
 }

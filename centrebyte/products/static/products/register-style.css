@@ -1,3 +1,4 @@
+
 .form-container {
     margin-top: 45px;
     display: flex;
@@ -20,10 +21,10 @@
 }
 .form-group{
     background-color: white;
-    border-radius: 12px;
+   
     padding: 25px;
     margin:10px;
-    border: 2px solid Black;
+    width: 75%;
 }
 .form-container button {
     background-color: #007bff; /* Set the button background color */
@@ -41,4 +42,24 @@
 }
 label{
     font-family: 'Courier New', Courier, monospace;
+}
+.help-message {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.help-text {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.help-text strong {
+    font-weight: bold;
+}
+
+.help-text em {
+    font-style: italic;
 }

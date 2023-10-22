@@ -1,8 +1,20 @@
+<div class="menu-bar">
+    <li><button id="first-element">Centrebyte </button></li>
+    <li><input type="text" placeholder="Search" id="search-input"></li>
+    <li class="search"><button id="search-button">Search</button></li>
 
-<ul class="menu-bar">
-    <li><button id = "first-element">Centrebyte</button></li>
-    <li><input type="text" placeholder="Search"></li>
-    <li class="search"><button>Search</button></li>
-    <li><button id="account-btn">Account</button></li>
-    <li><button id="last-element">Cart</button></li>
-</ul>
+    <li class="account-dropdown">
+        <button id="account-btn">Account</button>
+        <ul class="options-list" id="account-options">
+            <li><a href="/accounts/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </li>
+    <li class="cart-dropdown">
+        <button id="last-element">Cart</button>
+        <ul class="options-list" id="cart-options">
+            <li><a href="/cart">View Cart</a></li>
+            <li ><a href="/payment">Checkout</a></li>
+        </ul>
+    </li>
+</div>

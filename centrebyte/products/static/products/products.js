@@ -27,4 +27,44 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+$(document).ready(function() {
+    $(".add-to-cart").on("click", function() {
+        var itemId = $(this).data("item-id");
+        $.ajax({
+            url: '/add_to_cart/' + itemId + '/',
+            method: 'GET',
+            success: function(data) {
+                // Handle success (e.g., show a confirmation message)
+                console.log("Item added to cart.");
+            },
+            error: function(error) {
+                // Handle errors
+                console.error("Error adding item to cart.");
+            }
+        });
+    });
+});
+function showPrice(element) {
+    element.textContent = "{{ item.price }}";
+  }
 
+  function addItemToCart() {
+    // Your code to add the item to the cart
+    
+    // Show the notification
+    $('#cart-notification').show();
+
+    // Hide the notification after a delay (e.g., 3 seconds)
+    setTimeout(function () {
+        $('#cart-notification').hide();
+    }, 3000);
+}
+function editItem(itemId) {
+    var editForm = document.getElementById('edit-form-' + itemId);
+    editForm.style.display = 'block';
+}
+
+function cancelEdit(itemId) {
+    var editForm = document.getElementById('edit-form-' + itemId);
+    editForm.style.display = 'none';
+}
