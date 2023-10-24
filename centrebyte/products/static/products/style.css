@@ -253,7 +253,7 @@ html, body{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+   
      /* Set the font size using viewport units (5% of the viewport width) */
   }
   
