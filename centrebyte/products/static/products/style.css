@@ -172,18 +172,24 @@ html, body{
 }
 
 .menu-bar {
-    
     list-style: none;
     padding: 0px;
     height: 70px;
     margin: 0px;
-    background-color: #1e2761; /* Updated background color */
+    background-color: #1e2761;
     display: flex;
-    justify-content: center; /* Center all items horizontally */
-    align-items: center; /* Center all items vertically */
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     max-width: 100%;
+}
 
+/* Media query for small screens, like iPhone */
+@media screen and (max-width: 767px) {
+    .menu-bar {
+        height: auto; /* Adjust height for small screens */
+        flex-direction: column; /* Stack items vertically for small screens */
+    }
 }
 
 .menu-bar button {
