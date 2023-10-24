@@ -238,13 +238,6 @@ html, body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
-    background-image: linear-gradient(
-      -225deg,
-      #007bff 0%,  /* Darkest blue */
-      #007bff 29%, /* Medium blue */
-      #007bff 67%, /* Light blue */
-      #007bff 100% /* Lightest blue */
-    );
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
@@ -253,7 +246,7 @@ html, body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-size: 3.2vw; /* Set the font size using viewport units (5% of the viewport width) */
+    font-size: 50vw; /* Set the font size using viewport units (5% of the viewport width) */
   }
   
   /* You can adjust the font size for specific breakpoints if needed */
