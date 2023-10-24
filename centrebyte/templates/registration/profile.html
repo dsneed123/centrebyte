@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+        <script src="{% static 'products/products.js' %}" defer></script>
+        <script src="{% static 'Core/core.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Centrebyte</title>
+    </head>
+    <body> 
+        {% include 'menuBar.html' %}
+        {% include 'subMenu.html' %}
+        {% load i18n static %}
+ 
+        <div class="profile-dash-container">
+            <div class="left">
+                {% include 'dashboard-menu.html' %}
+            </div>
+            <div class="right">
+                <div class="user-title">
+                    <h1>Settings</h1>
+                </div>
+                <div class="user-info">
+                    <form class="user-form" method="post">
+                        {% csrf_token %}
+                        <div class="profile-item">
+                            <p><strong>Username:</strong> {{ user.username }}</p>
+                        </div>
+                        <div class="profile-item">
+                            <p><strong>Email:</strong> 
+                            {{ form.email.value }}
+                            <button type="button" class="edit-button" data-target-id="email-edit">Edit</button>
+                            </p>
+                            <div id="email-edit" style="display: none;">
+                                {{ form.email }}
+                                <button type="submit">Save</button>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <p><strong>First Name:</strong> 
+                            {{ form.first_name.value }}
+                            <button type="button" class="edit-button" data-target-id="first-name-edit">Edit</button>
+                            </p>
+                            <div id="first-name-edit" style="display: none;">
+                                {{ form.first_name }}
+                                <button type="submit">Save</button>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <p><strong>Last Name:</strong> 
+                            {{ form.last_name.value }}
+                            <button type="button" class="edit-button" data-target-id="last-name-edit">Edit</button>
+                            </p>
+                            <div id="last-name-edit" style="display: none;">
+                                {{ form.last_name }}
+                                <button type="submit">Save</button>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <button href="{% url 'logout' %}" class="logout-link" id="logout-link">Logout</button>
+                        </div>
+                        <div id="logout-notification">
+                            Logout successful!
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+    </body>
+</html>

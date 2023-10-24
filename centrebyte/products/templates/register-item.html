@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'products/register-style.css' %}">
+    <script src="{% static 'products/products.js' %}" defer></script>
+    <script src="{% static 'Core/core.js' %}" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    {% include 'menuBar.html' %}
+    {% include 'subMenu.html' %}
+
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            
+            <div class="form-group">
+                <h1 for="{{ form.name.id }}">Title:</h1>
+                {{ form.name }}
+                {{ form.name.errors }}
+                <div class="help-message">
+                    <p class="help-text"> A title should be a concise, compelling summary of the content it represents, capturing the essence of the subject in a few words. To make it good, ensure it's clear, relevant, and attention-grabbing, often by using action verbs or intriguing questions, and align it with the audience's interests and expectations.</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h1 class="Description" for="{{ form.descriptions.id }}">Description:</h1>
+                {{ form.descriptions }}
+                {{ form.descriptions.errors }}
+                <div class="help-message">
+                    <p class="help-text">To write a string description effectively in under 150 characters, focus on clarity and conciseness. Start with a compelling summary, including key details, benefits, and any unique features. Use action words, remove unnecessary fluff, and tailor it to your audience's interests and expectations for a concise yet informative description.</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.price.id }}">Price:</label>
+                {{ form.price }}
+                {{ form.price.errors }}
+                <div class="help-message">
+                    <p class="help-text">Specify the price in USD. It will be automatically converted to BTC on the webpage, ensuring seamless currency conversion for your customers."</p>
+                </div>
+            </div>
+    
+            <!-- Add the available_count field to the form -->
+            <div class="form-group">
+                <h1 for="{{ form.available_count.id }}">Available Count:</h1>
+                {{ form.available_count }}
+                {{ form.available_count.errors }}
+                <div class="help-message">
+                    <p class="help-text">Enter the quantity of this product available for sale. If your stock is over 50, it will be displayed as 'unlimited' on the website, indicating a large available supply</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <h1 for="{{ form.image.id }}">Image:</h1>
+                {{ form.image }}
+                {{ form.image.errors }}
+                <div class="help-message">
+                    <p class="help-text">Upload an image with a square aspect ratio. This ensures the visual consistency and ideal display of your product on the website.</p>
+                </div>
+            </div>
+    
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>

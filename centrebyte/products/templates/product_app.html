@@ -1,0 +1,41 @@
+{% load static custom_filters %}
+
+<div class="container">
+    {% for item, btc_price in items_with_prices %}
+    <div class="box">
+        <div class="display-item">
+            <img class="item-image" src="{{ item.image.url }}" alt="{{ item.name }}">
+            <div class="product-details">
+                <p class="app-item-name">{{ item.name }}</p>
+                <h1 class="hover-element">
+                    <span class="btc-price">{{ btc_price }} BTC</span>
+                    <span class="item-price">{{ item.price }}$</span>
+                </h1>
+                <div class="average-rating">
+                    <div class="rating-stars">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= average_ratings|get_item:item.id %}
+                                <img class='star-img' src="{% static 'images/full-star.png' %}" alt="Full Star">
+                            {% else %}
+                                <img class='star-img' src="{% static 'images/empty-star.png' %}" alt="Empty Star">
+                            {% endif %}
+                        {% endfor %}
+                        <p>{{ average_ratings|get_item:item.id }} / 5</p>
+                        <div class="product_app_buttons">
+                            <button onclick="addItemToCart()" class="add-to-cart" data-item-id="{{ item.id }}">Add to cart</button>
+                            <button class="read-more" data-item-id="{{ item.id }}">Read More</button>
+                        </div>
+                        {% if item.available_count > 50 %}
+                            <p style="color:green;">In Stock</p>
+                        {% elif item.available_count > 0 %}
+                            <p style="color: goldenrod;">Low Stock {{ item.available_count }} left</p>
+                        {% else %}
+                            <p style="color:red;">Out of Stock</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

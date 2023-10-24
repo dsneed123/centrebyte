@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="{% static 'css/update_item.css' %}">
+</head>
+<body>
+    <h1>Edit Item</h1>
+    <form method="POST" class="edit-form" action="{% url 'update_item' item.id %}">
+        {% csrf_token %}
+        <label for="edit-name">Name:</label>
+        <input type="text" name="edit-name" id="edit-name" value="{{ item.name }}"><br>
+        <label for="edit-price">Price:</label>
+        <input type="text" name="edit-price" id="edit-price" value="{{ item.price }}"><br>
+        <label for="edit-description">Description:</label>
+        <input type="text" name="edit-description" id="edit-description" value="{{ item.descriptions }}"><br>
+        <!-- Add an input field for image if needed -->
+        <button type="submit">Save</button>
+        <button type="button" onclick="cancelEdit({{ item.id }})">Cancel</button>
+    </form>
+</body>
+</html>

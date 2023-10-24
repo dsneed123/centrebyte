@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+* {
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+a img {
+	text-decoration: none; 
+	border: 0px;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #ffffff;
+}
+
+#container {
+	position: absolute;
+	width: 300px;
+	height: 250px;
+	border:1px solid #666;
+	top: 0px;
+	left: 0px;
+	margin: auto;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+#content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+}
+
+#rolloverCatch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+	left: 0px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+#cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+	left: 0px;
+    background-color: #fff;
+    z-index: 998;
+}
+
+#hideMask {
+    position: absolute;
+    top: 207px;
+    left: 175px;
+    overflow: hidden;
+    width: 92px;
+    height: 29px;
+    z-index: 600;
+	border-radius: 16px;
+}
+
+#shimmer {
+    position: relative;
+	top:-10px;
+    left: 200px;  
+	opacity: .5;
+}
+
+
+#txt_1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 200 !important;
+}
+#circle{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+    height: 100%;
+	z-index: 100;
+}
+#cta{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+    height: 100%;
+	z-index: 300;
+}
+#logo{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+    height: 100%;
+	z-index: 300;
+}
+#txt_1, #txt_1b, #txt_2, #txt_2b{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+    height: 100%;
+	z-index: 300;
+}
+#orangeBckgrd{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 300px;
+    height: 129px;;
+	background-color: #ec6b29;
+	z-index: 101;
+}
+#bckImg{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+    height: 100%;
+	z-index: 100;
+}
+#icon{
+    position: absolute;
+	left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+
+#iconImg{ 
+    position: absolute;
+	left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+
+    -ms-transform: scale(0); 
+    -webkit-transform: scale(0); 
+    transform: scale(0);
+
+    -ms-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%; 
+    transform-origin: 100% 100%;
+}

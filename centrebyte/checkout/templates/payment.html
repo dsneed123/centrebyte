@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+        <script src="{% static 'products/products.js' %}" defer></script>
+        <script src="{% static 'Core/core.js' %}" defer></script>
+        <script src="{% static 'Core/dash.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+       
+        <title>Payment Centrebyte</title>
+    <script src="{% static 'payment.js' %}" defer></script>
+</head>
+<body>
+    {% include 'menuBar.html' %}
+    {% include 'subMenu.html' %}
+    {% load i18n static %}
+    <h1>Crypto Payment</h1>
+    <h2>Total Price: ${{ total_price }}</h2>
+
+    <h3>Send Crypto Payment</h3>
+    <div class="crypto-wallet">
+        <p>Scan the QR code or copy the unique identifier and make the payment to the provided address.</p>
+
+        <!-- Display the QR code image -->
+        <img src="data:image/png;base64,{{ qr_image_base64 }}" alt="QR Code">
+        <button class="crypto-sent">I have sent the crypto</button>
+        <h4>Wallet address:</h4>
+        <p>{{ wallet_address }}</p>
+        <p>Balance: {{ balance }}BTC</p>
+        <p>Please make the payment and complete your order.</p>
+
+    </div>
+    <form id="deleteWalletForm" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="wallet_name" value="{{ wallet_name }}">
+    </form>
+
+    <a href="{% url 'cart_view' %}">Back to Cart</a>
+</body>
+</html>

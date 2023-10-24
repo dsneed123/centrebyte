@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'products/style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet"> 
+        <script src="{% static 'products/products.js' %}" defer></script>
+        <script src="{% static 'Core/core.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">  
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Centrebyte</title>
+    </head>
+    <body>
+        {% include 'menuBar.html' %}
+        {% include 'subMenu.html' %}
+        {% load i18n static %}
+    <div class="profile-dash-container">
+        <div class="left">
+            {% include 'dashboard-menu.html' %}
+        </div>
+        <div class="right">
+            <ul>
+                {% for item in user_items %}
+                    <li>
+                        <div class="user-item-container">
+                            <h2>{{ item.name }}</h2>
+                            <p>Price: ${{ item.price }}</p>
+                            <p>Description: {{ item.descriptions }}</p>
+                            <img src="{{ item.image.url }}" alt="{{ item.name }}" width="100">
+                            <button class='edit-btn' onclick="editItem({{ item.id }})">Edit</button>
+                        </div>
+                        <div class="edit-form" id="edit-form-{{ item.id }}" style="display: none;">
+                            <form method="POST" action="{% url 'update_item' item.id %}">
+                                {% csrf_token %}
+                                <label for="edit-name">Name:</label>
+                                <input type="text" name="edit-name" id="edit-name" value="{{ item.name }}"><br>
+                                <label for="edit-price">Price:</label>
+                                <input type="text" name="edit-price" id="edit-price" value="{{ item.price }}"><br>
+                                <label for="edit-description">Description:</label>
+                                <input type="text" name="edit-description" id="edit-description" value="{{ item.descriptions }}"><br>
+                                <!-- Add an input field for image if needed -->
+                                <button type="submit">Save</button>
+                                <button type="button" onclick="cancelEdit({{ item.id }})">Cancel</button>
+                            </form>
+                        </div>
+                    </li>
+                {% empty %}
+                    <p>You don't have any items yet.</p>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
