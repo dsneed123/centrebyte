@@ -148,7 +148,7 @@ html, body{
     padding: 0px;
     height: 35px;
     background-color : #4C4E52;
-    z-index: auto;
+    z-index: 99;
     position: relative;
     
 
@@ -183,7 +183,7 @@ html, body{
     justify-content: center; /* Center all items horizontally */
     align-items: center; /* Center all items vertically */
     flex-wrap: wrap;
-    z-index: auto;
+    z-index: 100;
     width: 100%;
     position: relative;
 
