@@ -147,7 +147,7 @@ html, body{
     margin-top: 0px;
     padding: 0px;
     height: 35px;
-  
+    z-index: 9;
     background-color : #4C4E52;
     
 
