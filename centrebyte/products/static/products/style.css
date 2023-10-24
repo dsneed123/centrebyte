@@ -149,6 +149,9 @@ html, body{
     height: 35px;
     z-index: auto;
     background-color : #4C4E52;
+    z-index: auto;
+    width: 100%;
+    position: relative;
     
 
 }
@@ -184,7 +187,7 @@ html, body{
     flex-wrap: wrap;
     z-index: auto;
     width: 100%;
-  
+    position: relative;
 
 }
 
