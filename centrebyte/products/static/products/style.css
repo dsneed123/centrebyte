@@ -172,24 +172,18 @@ html, body{
 }
 
 .menu-bar {
+    
     list-style: none;
     padding: 0px;
     height: 70px;
     margin: 0px;
-    background-color: #1e2761;
+    background-color: #1e2761; /* Updated background color */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center all items horizontally */
+    align-items: center; /* Center all items vertically */
     flex-wrap: wrap;
     max-width: 100%;
-}
 
-/* Media query for small screens, like iPhone */
-@media screen and (max-width: 767px) {
-    .menu-bar {
-        height: auto; /* Adjust height for small screens */
-        flex-direction: column; /* Stack items vertically for small screens */
-    }
 }
 
 .menu-bar button {
@@ -237,33 +231,50 @@ html, body{
     text-align: center;
     color: white;
 }
-
-.animate-charcter
-{
-  font-family: "Black Ops One", sans-serif;
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #007bff 0%,  /* Darkest blue */
-    #007bff 29%, /* Medium blue */
-    #007bff 67%, /* Light blue */
-    #007bff 100% /* Lightest blue */
-);
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  display: inline-block;
-      font-size: 120px;
-}
+.animate-character {
+    font-family: "Black Ops One", sans-serif;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #007bff 0%,  /* Darkest blue */
+      #007bff 29%, /* Medium blue */
+      #007bff 67%, /* Light blue */
+      #007bff 100% /* Lightest blue */
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 120px;
+  }
+  
+  /* Media queries for different screen sizes */
+  @media screen and (max-width: 767px) {
+    .animate-character {
+      font-size: 80px; /* Adjust font size for small screens */
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .animate-character {
+      font-size: 100px; /* Adjust font size for medium screens */
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .animate-character {
+      font-size: 120px; /* Default font size for larger screens */
+    }
+  }
+  
 
 #backButton{
     background-color: #007bff; /* Set the button background color */
