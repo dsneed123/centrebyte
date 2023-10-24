@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-3r=m0al10&&b^gl=maaobc=n9e=mzf06*j^-x5cx3k!iq5rpbv
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['157.230.159.40']
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = True
 
 
 # Application definition
