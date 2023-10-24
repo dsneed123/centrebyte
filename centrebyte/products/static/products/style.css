@@ -253,16 +253,11 @@ html, body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-size: 5vw; /* Set the font size using viewport units (5% of the viewport width) */
+    font-size: 3.2vw; /* Set the font size using viewport units (5% of the viewport width) */
   }
   
   /* You can adjust the font size for specific breakpoints if needed */
-  @media screen and (max-width: 767px) {
-    .animate-character {
-      font-size: 8vw; /* Adjust font size for small screens */
-    }
-  }
-  
+
   
 
 #backButton{
