@@ -2,7 +2,7 @@
 html, body{
     background-color: #f0f8ff;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
  
 }
 
@@ -19,7 +19,7 @@ html, body{
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px;
-    width: 100%;
+    max-width: 100%;
     font-family:  'Ubuntu', sans-serif;
    
 }
@@ -32,7 +32,7 @@ html, body{
     margin-left: 0px;
     margin-right: 0px;
     padding: 0px;
-    width: 100%;
+    max-width: 100%;
     font-family:  'Ubuntu', sans-serif;
 }
 .box {
@@ -40,7 +40,7 @@ html, body{
     padding: 10px;
     color: black;
     background-color: transparent;
-    width: 325px;
+    max-width: 325px;
     height: 550px; /* Set a fixed height for all boxes */
     position: relative;
     text-align: center;
@@ -51,7 +51,7 @@ html, body{
 
 .display-item {
     background-color: white;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     margin: 0px;
     display: flex;
@@ -182,14 +182,14 @@ html, body{
     justify-content: center; /* Center all items horizontally */
     align-items: center; /* Center all items vertically */
     flex-wrap: wrap;
-    width: 100%;
+    max-width: 100%;
 
 }
 
 .menu-bar button {
     font-family: "Black Ops One", sans-serif;
     background-color: #1e2761;
-    width: 100px;
+    max-width: 100px;
     border : 0px;
     color: white;
     cursor: pointer;
@@ -214,7 +214,7 @@ html, body{
     border-radius: 4px;
     font-size: 16px;
     height: 40px;
-    width: 95%;
+    max-width: 95%;
     min-width: 0;
     margin-right: 10px;
     margin-left: 10px;
@@ -282,7 +282,7 @@ html, body{
     height: 100%;
     position: relative;
     margin-top: -45%;
-    width: 100%;
+    max-width: 100%;
     
  
 }
@@ -304,7 +304,7 @@ html, body{
     left: 0;
     background-color: #007bff;
     height: 100%;
-    width: 8%;
+    max-width: 8%;
     z-index: 999; /* Set a high z-index to make sure it's in front of other content */
     
 }
@@ -315,7 +315,7 @@ html, body{
     padding: 8px 16px; /* Add some padding to the button */
     font-size: 16px; /* Set the font size for the button text */
     cursor: pointer; /* Change cursor to pointer on hover */
-    width: 100%;
+    max-width: 100%;
     cursor: pointer;
     margin-top: 5px;
     margin-top: 10px;
@@ -334,7 +334,7 @@ html, body{
     height: 100%;
 }
 .title{
-    width: 100%;
+    max-width: 100%;
     text-align: center;
     font-family:  'Ubuntu', sans-serif;
     font-size: 17pt;
@@ -348,7 +348,7 @@ html, body{
     margin:10px;
     border-radius: 12px;
     border: 2px solid black;
-    width: 80%;
+    max-width: 80%;
 }
 .user-info{
     background-color: white;
@@ -356,7 +356,7 @@ html, body{
     margin:10px;
     border-radius: 12px;
     border: 2px solid black;
-    width: 80%;
+    max-width: 80%;
     display : flex;
     flex-direction: column;
     align-items: center;
@@ -366,12 +366,12 @@ html, body{
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid gray;
-    width: 70%;
+    max-width: 70%;
     padding: 10px;
     font-size: 15pt;
 }
 .user-form{
-    width: 100%;
+    max-width: 100%;
     display : flex;
     flex-direction: column;
     align-items: center;
@@ -380,13 +380,13 @@ html, body{
     display : flex;
     flex-direction: column;
     align-items: center;
-    width:100%;
+    max-width:100%;
     margin:8px;
 }
 .message-box{
     background-color: rgb(0, 7, 133);
     font-size: 15pt;
-    width: 75%;
+    max-width: 75%;
     padding:25px;
     border-radius: 20px;
     color:white;
@@ -404,7 +404,7 @@ html, body{
     margin:10px;
 }
 .cart-container {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -422,7 +422,7 @@ html, body{
 }
 
 .cart-items-container {
-    width: 70%; /* Adjust the width to your preference */
+    max-width: 70%; /* Adjust the width to your preference */
     float: left;
    
 }
@@ -430,7 +430,7 @@ html, body{
 .order-summary {
     clear: both;
     background-color: lightgray;
-    width: 100%; /* Width of the parent container */
+    max-width: 100%; /* Width of the parent container */
     padding: 20px;
     box-sizing: border-box;
     height: auto;
@@ -444,11 +444,11 @@ html, body{
     background-color: #f1807e;
     font-family: 'Ubuntu', sans-serif;
     color: white;
-    width: 50px;
+    max-width: 50px;
     padding: 12px 20px;
     border: none;
     border-radius: 12px;
-    width: auto;
+    max-width: auto;
     
 }
 .promo-code input{
@@ -460,7 +460,7 @@ html, body{
 .cart-items {
     background-color: transparent;
     border: 2px solid black;
-    width: 100%; /* Set the width to 100% to make it expand across the screen */
+    max-width: 100%; /* Set the width to 100% to make it expand across the screen */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -482,7 +482,7 @@ html, body{
     background-color: white;
     margin: 10px;
     height: auto;
-    width: 50%; /* Set the width to 100% to make each cart item expand across the screen */
+    max-width: 50%; /* Set the width to 100% to make each cart item expand across the screen */
     border: 2px solid darkgray;
     display: flex;
     align-items: center;
@@ -502,7 +502,7 @@ html, body{
 }
 .order-summary{
     background-color: lightgray;
-    width:400px;
+    max-width:400px;
 }
 ul{
     list-style-type: none;
@@ -517,7 +517,7 @@ ul{
     font-size: 12pt;
 }
 .crypto-wallet{
-    width: 450px;
+    max-width: 450px;
     border:2px outset black;
 
 }
@@ -532,7 +532,7 @@ ul{
     margin:10px;
 }
 .star-img{
-    width:30px;
+    max-width:30px;
     height: 30px;
     margin: 0px;
     
@@ -554,7 +554,7 @@ ul{
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 100%;
+    max-width: 100%;
 }
   
   /* Dropdown Content (Hidden by Default) */
@@ -701,7 +701,7 @@ ul{
 
 .form-row input[type="text"],
 .form-row input[type="password"] {
-    width: 100%;
+    max-width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -759,7 +759,7 @@ ul{
 }
 
 .product-item-image {
-    width: 550px;
+    max-width: 550px;
     height: auto;
     margin: 10px 0;
     /* Add other styling as needed for the right image */
@@ -807,7 +807,7 @@ ul{
     margin: 10px;
     display: inline-block;
     text-align: left; /* Reset text alignment for content within the container */
-    width:100%;
+    max-width:100%;
 }
 /* Apply styles to the edit form */
 .edit-form {
@@ -828,7 +828,7 @@ ul{
 
 /* Style form input fields */
 .edit-form input[type="text"] {
-    width: 100%;
+    max-width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
