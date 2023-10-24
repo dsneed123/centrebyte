@@ -253,27 +253,16 @@ html, body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-size: 120px;
+    font-size: 5vw; /* Set the font size using viewport units (5% of the viewport width) */
   }
   
-  /* Media queries for different screen sizes */
+  /* You can adjust the font size for specific breakpoints if needed */
   @media screen and (max-width: 767px) {
     .animate-character {
-      font-size: 80px; /* Adjust font size for small screens */
+      font-size: 8vw; /* Adjust font size for small screens */
     }
   }
   
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .animate-character {
-      font-size: 100px; /* Adjust font size for medium screens */
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .animate-character {
-      font-size: 120px; /* Default font size for larger screens */
-    }
-  }
   
 
 #backButton{
