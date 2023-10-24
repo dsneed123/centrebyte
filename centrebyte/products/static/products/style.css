@@ -253,7 +253,7 @@ html, body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-size: 30pt; /* Set the font size using viewport units (5% of the viewport width) */
+    font-size: 50pt; /* Set the font size using viewport units (5% of the viewport width) */
   }
   
   /* You can adjust the font size for specific breakpoints if needed */
