@@ -237,10 +237,10 @@ html, body{
     color: white;
 }
 .animate-character {
-    margin-top:10px;
+   
     font-family: "Black Ops One", sans-serif;
    
-    position: absolute;
+    position: relative;
     top: 12%;
     left: 50%;
     transform: translate(-50%, -50%);
