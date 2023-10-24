@@ -182,7 +182,7 @@ html, body{
     justify-content: center; /* Center all items horizontally */
     align-items: center; /* Center all items vertically */
     flex-wrap: wrap;
-    z-index: 100;
+    z-index: auto;
     width: 100%;
   
 
