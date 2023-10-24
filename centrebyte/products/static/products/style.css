@@ -233,6 +233,7 @@ html, body{
 }
 .animate-character {
     font-family: "Black Ops One", sans-serif;
+    font-size: 13vw;
     position: absolute;
     top: 12%;
     left: 50%;
@@ -253,7 +254,7 @@ html, body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    font-size: 13pt; /* Set the font size using viewport units (5% of the viewport width) */
+     /* Set the font size using viewport units (5% of the viewport width) */
   }
   
   /* You can adjust the font size for specific breakpoints if needed */
