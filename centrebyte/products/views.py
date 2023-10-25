@@ -48,7 +48,7 @@ class ProductView(LoginRequiredMixin, View):
 
         return render(request, self.template_name, context)
 
-
+@login_required
 def register_item(request):
     if request.method == 'POST':
         form = RegisterItemForm(request.POST, request.FILES)
